@@ -1,0 +1,72 @@
+{
+    "scope": "source.priv",
+
+    "completions": [
+
+        { "trigger": "init",                                      "contents": "module.exports = function(blocks) {\n\tblocks.declare('b-page_$1', function(data, page) {\n\t\tpage.title = $2;\n\t\tpage.content = [\n\t\t\t$0\n\t\t];\n\t\treturn page;\n\t});\n};" },
+        { "trigger": "module.exports = function(blocks) { ... }", "contents": "module.exports = function(blocks) {\n\tblocks.declare('b-page_$1', function(data, page) {\n\t\tpage.title = $2;\n\t\tpage.content = [\n\t\t\t$0\n\t\t];\n\t\treturn page;\n\t});\n};" },
+
+        // { "trigger": "block", "contents": "'${1:blockName}',$0" },
+
+        { "trigger": "block: 'blockName'",                      "contents": "{ block: '${1:blockName}' },$0" },
+        { "trigger": "block: 'blockName', content: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\tcontent: $2\n},$0" },
+        { "trigger": "block: 'blockName', content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "block: 'blockName', content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+        { "trigger": "block: 'blockName', js: true",            "contents": "{\n\tblock: '${1:blockName}',\n\tjs: ${2:true}\n},$0" },
+        { "trigger": "block: 'blockName', js: { object }",      "contents": "{\n\tblock: '${1:blockName}',\n\tjs: {\n\t\t${2:}\n\t}\n},$0" },
+
+        { "trigger": "block: 'blockName', mix: [ ... ]",                      "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ]\n}," },
+        { "trigger": "block: 'blockName', mix: [ ... ], content: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ],\n\tcontent: $0\n}," },
+        { "trigger": "block: 'blockName', mix: [ ... ], content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ],\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "block: 'blockName', mix: [ ... ], content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ],\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+        // ??? { "trigger": "block: 'blockName', url: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2\n},$0" },
+        { "trigger": "block: 'blockName', url: ..., content: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: '${3:}'\n},$0" },
+        { "trigger": "block: 'blockName', url: ..., content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "block: 'blockName', url: ..., content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+        { "trigger": "block: 'blockName', elem: 'elemName'",                              "contents": "{\n\tblock: '${1:blockName}',\n\telem: '${2:elemName}'\n},$0" },
+        { "trigger": "block: 'blockName', elem: 'elemName', mods: { modName: modVal1 },", "contents": "{\n\tblock: '${1:blockName}',\n\telem: '${2:elemName}',\n\tmods: { ${3:modName}: '${4:modVal1}' }\n},$0" },
+        { "trigger": "block: 'blockName', elems: [elemName1, elemName2],",                "contents": "{\n\tblock: '${1:blockName}',\n\telems: ['${2:elemName}', '${3:elemName2}']\n},$0" },
+
+        { "trigger": "block: 'blockName', mods: { modName: modVal },",                                   "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' }\n},$0" },
+        { "trigger": "block: 'blockName', mods: { modName: [modVal1, modVal2] },",                       "contents": "{\n\tblock: '${1:blockName}',\n\tmods: {\n\t\t${2:modName}: ['${3:modVal1}', '${4:modVal2}']\n\t}\n},$0" },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, content: ...",                      "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: $0\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, content: { object }",               "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, content: [ array ]",                "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: [\n\t\t$0\n\t]\n}," },
+        // ??? { "trigger": "block mods mix",                                                            "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tmix: [ $4 ]\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, mix: [ ... ]",                      "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tmix: [ $4 ]\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, mix: [ ... ], content: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tmix: [ $4 ],\n\tcontent: $0\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, mix: [ ... ], content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tmix: [ $4 ],\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "block: 'blockName', mods: { modName: modVal }, mix: [ ... ], content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tmix: [ $4 ],\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+
+
+        { "trigger": "elem: 'elemName'",                      "contents": "{ elem: '${1:elemName}' },$0" },
+        { "trigger": "elem: 'elemName', content: ...",        "contents": "{\n\telem: '${1:elemName}',\n\tcontent: $2\n},$0" },
+        { "trigger": "elem: 'elemName', content: { object }", "contents": "{\n\telem: '${1:elemName}',\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "elem: 'elemName', content: [ array ]",  "contents": "{\n\telem: '${1:elemName}',\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }",                      "contents": "{ elem: '${1:elemName}', mods: { ${2:modName}: '${3:modVal}' } },$0" },
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }, content: ...",        "contents": "{\n\telem: '${1:elemName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: $0\n}," },
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }, content: { object }", "contents": "{\n\telem: '${1:elemName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: {\n\t\t$0\n\t}\n}," },
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }, content: [ array ]",  "contents": "{\n\telem: '${1:elemName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tcontent: [\n\t\t$0\n\t]\n}," },
+
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }, js: ...",        "contents": "{\n\telem: '${1:elemName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tjs: ${4:true}\n},$0" },
+        { "trigger": "elem: 'elemName', mods: { modName: 'modVal' }, js: { object }", "contents": "{\n\telem: '${1:elemName}',\n\tmods: { ${2:modName}: '${3:modVal}' },\n\tjs: {\n\t\t${4:true}\n\t}\n},$0" },
+
+        { "trigger": "elem: 'elemName', mix: [ ... ]",                      "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ]\n},$0" },
+        { "trigger": "elem: 'elemName', mix: [ ... ], content: ...",        "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ],\n\tcontent: $3\n},$0" },
+        { "trigger": "elem: 'elemName', mix: [ ... ], content: { object }", "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ],\n\tcontent: {\n\t\t$3\n\t}\n},$0" },
+        { "trigger": "elem: 'elemName', mix: [ ... ], content: [ array ]",  "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ],\n\tcontent: [\n\t\t$3\n\t]\n},$0" },
+        // links
+        { "trigger": "elem: 'elemName', url: ..., content: ...",            "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: $3\n},$0" },
+        { "trigger": "elem: 'elemName', url: ..., content: { object }",     "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: {\n\t\t$3\n\t}\n},$0" },
+        { "trigger": "elem: 'elemName', url: ..., content: [ array ]",      "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: [\n\t\t$3\n\t]\n},$0" },
+
+        { "trigger": "elems: ['elemName1', 'elemName2']", "contents": "{ elems: ['${1:elemName1}', '${2:elemName2}'] },$0" },
+
+        // attrs
+    ]
+}
