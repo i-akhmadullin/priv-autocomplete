@@ -21,7 +21,7 @@
         { "trigger": "block: 'blockName', mix: [ ... ], content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ],\n\tcontent: {\n\t\t$0\n\t}\n}," },
         { "trigger": "block: 'blockName', mix: [ ... ], content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\tmix: [ $2 ],\n\tcontent: [\n\t\t$0\n\t]\n}," },
 
-        // ??? { "trigger": "block: 'blockName', url: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2\n},$0" },
+        // url-no-text ??? { "trigger": "block: 'blockName', url: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2\n},$0" },
         { "trigger": "block: 'blockName', url: ..., content: ...",        "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: '${3:}'\n},$0" },
         { "trigger": "block: 'blockName', url: ..., content: { object }", "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: {\n\t\t$0\n\t}\n}," },
         { "trigger": "block: 'blockName', url: ..., content: [ array ]",  "contents": "{\n\tblock: '${1:blockName}',\n\turl: $2,\n\tcontent: [\n\t\t$0\n\t]\n}," },
@@ -61,6 +61,7 @@
         { "trigger": "elem: 'elemName', mix: [ ... ], content: { object }", "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ],\n\tcontent: {\n\t\t$3\n\t}\n},$0" },
         { "trigger": "elem: 'elemName', mix: [ ... ], content: [ array ]",  "contents": "{\n\telem: '${1:elemName}',\n\tmix: [ $2 ],\n\tcontent: [\n\t\t$3\n\t]\n},$0" },
         // links
+        // url-no-text???
         { "trigger": "elem: 'elemName', url: ..., content: ...",            "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: $3\n},$0" },
         { "trigger": "elem: 'elemName', url: ..., content: { object }",     "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: {\n\t\t$3\n\t}\n},$0" },
         { "trigger": "elem: 'elemName', url: ..., content: [ array ]",      "contents": "{\n\telem: '${1:elemName}',\n\turl: $2,\n\tcontent: [\n\t\t$3\n\t]\n},$0" },
