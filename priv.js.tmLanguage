@@ -553,6 +553,30 @@
 			<key>name</key>
 			<string>keyword.control.js</string>
 		</dict>
+	<dict>
+		<key>match</key>
+		<string>\b(block|mods|content|js|elem|elemMods|mix|attrs|alt|url)\b</string>
+		<key>name</key>
+		<string>keyword.block.field</string>
+	</dict>
+	<dict>
+		<key>match</key>
+		<string>\b(blocks)\b</string>
+		<key>name</key>
+		<string>entity.blocks</string>
+	</dict>
+	<dict>
+		<key>match</key>
+		<string>\b(data)\b</string>
+		<key>name</key>
+		<string>entity.data</string>
+	</dict>
+	<dict>
+		<key>match</key>
+		<string>\b(page)\b</string>
+		<key>name</key>
+		<string>entity.page</string>
+	</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(delete|in|instanceof|new|typeof|with)\b</string>
