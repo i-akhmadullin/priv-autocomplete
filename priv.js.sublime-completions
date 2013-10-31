@@ -6,6 +6,12 @@
         { "trigger": "init",                                      "contents": "module.exports = function(blocks) {\n\tblocks.declare('b-page_$1', function(data, page) {\n\t\tpage.title = $2;\n\t\tpage.content = [\n\t\t\t$0\n\t\t];\n\t\treturn page;\n\t});\n};" },
         { "trigger": "module.exports = function(blocks) { ... }", "contents": "module.exports = function(blocks) {\n\tblocks.declare('b-page_$1', function(data, page) {\n\t\tpage.title = $2;\n\t\tpage.content = [\n\t\t\t$0\n\t\t];\n\t\treturn page;\n\t});\n};" },
 
+        { "trigger": "exec", "contents": "exec('${1:blockName}', ${2:data})$0" },
+        { "trigger": "blocks.exec", "contents": "blocks.exec('${1:blockName}', ${2:data})$0" },
+
+        { "trigger": "declare", "contents": "module.exports = function(blocks) {\n\tblocks.declare('${1:blockName}', function(data) {\n\t\treturn [\n\t\t\t$0\n\t\t]\n\t});\n};" },
+        { "trigger": "blocks.declare", "contents": "module.exports = function(blocks) {\n\tblocks.declare('${1:blockName}', function(data) {\n\t\treturn [\n\t\t\t$0\n\t\t]\n\t});\n};" },
+
         // { "trigger": "block", "contents": "'${1:blockName}',$0" },
 
         { "trigger": "block: 'blockName'",                      "contents": "{ block: '${1:blockName}' },$0" },
